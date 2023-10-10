@@ -6,10 +6,10 @@ class ThemeController{
 
   static final instance = ThemeController._();
 
-  ValueNotifier<bool> _brightness = ValueNotifier<bool>(true);
-  bool get brightness => _brightness.value;
+  ValueNotifier<bool> brightness = ValueNotifier<bool>(true);
+  bool get brightnessValue => brightness.value;
 
-  Color primary ()=> brightness
+  Color primary ()=> brightnessValue
         ?Configure.PRIMARY
         :Configure.PRIMARY_DARK;
   
@@ -18,11 +18,11 @@ class ThemeController{
   Color auxiliar ()=> Configure.AUXILIAR;
   Color accent ()=> Configure.ACCENT;
 
-  Color primaryButton ()=> brightness
+  Color primaryButton ()=> brightnessValue
         ?Configure.PRIMARY
         :Configure.ACCENT;
   Color secondaryButton ()=> Configure.SECONDARY;
 
   Color background ()=> 
-  brightness?Configure.AUXILIAR:Configure.TERCERY_DARK;
+  brightnessValue?Configure.AUXILIAR:Configure.TERCERY_DARK;
 }
