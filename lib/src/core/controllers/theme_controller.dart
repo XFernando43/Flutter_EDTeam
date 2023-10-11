@@ -25,4 +25,8 @@ class ThemeController{
 
   Color background ()=> 
   brightnessValue?Configure.AUXILIAR:Configure.TERCERY_DARK;
+
+  void ChangeTheme(){
+    brightness.value = !brightness.value;
+  }
 }

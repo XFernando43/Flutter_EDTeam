@@ -22,7 +22,9 @@ class HomePage extends StatelessWidget{
         Container(
           child: Center(child: Text("Primer Text",style: TextStyle(fontSize: 30,color: theme.primary()),)),
         ),
-        ElevatedButton(onPressed: (){}, child: Text("ACCION"))
+        ElevatedButton(onPressed: (){
+          theme.ChangeTheme();
+        }, child: Text("ACCION"))
       ],)
     );
     });
