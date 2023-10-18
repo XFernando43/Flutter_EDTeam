@@ -2,9 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:proyecto_edteam/src/core/constants/data.dart';
+import 'package:proyecto_edteam/src/core/controllers/theme_controller.dart';
 import 'package:proyecto_edteam/src/ui/pages/home_page.dart';
 
-void main(){
+void main() async{
+  await ThemeController.instance.initTheme();
   runApp(MyApp());
 }
 

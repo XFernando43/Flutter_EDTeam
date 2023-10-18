@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_edteam/src/core/services/preference_service.dart';
 import 'package:proyecto_edteam/src/ui/configure.dart';
 
 class ThemeController{
@@ -26,7 +27,13 @@ class ThemeController{
   Color background ()=> 
   brightnessValue?Configure.AUXILIAR:Configure.TERCERY_DARK;
 
-  void ChangeTheme(){
+  void ChangeTheme() async{
     brightness.value = !brightness.value;
+    await PreferenceService.instace.setBool("tema", brightness.value);
+  }
+
+
+  Future<void> initTheme() async{
+    brightness.value = await PreferenceService.instace.getBool("tema");
   }
 }
