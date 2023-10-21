@@ -15,6 +15,3 @@ class Task{
     this.state = StateTask.Created,
   });
 }
-
-
-//mierda
